@@ -57,7 +57,6 @@ void internal_help() {
 static inline bool find_in_map(carg_string* arg, carg_context* ctx, cargs_all* o_entry) {
     bool islong = is_long_arg(*arg);
     if (!islong && !is_short_arg(*arg)) {
-        printf("\"%s\" is neither long nor short arg!\n", arg->str);
         return false;
     }
     for (size_t i = 0; i < ctx->map_size; ++i) {

@@ -1,10 +1,6 @@
 #include "cargs.h"
 #include <stdio.h>
 
-void cmd_help() {
-    printf("this is a help string!");
-}
-
 void cmd_noop() {
     printf("noop!");
 }
@@ -28,7 +24,9 @@ CARGS_ARGS {
 
 int main(int argc, char** argv) {
     bool ret = cargs_run(argc, argv);
+    printf("quiet: %s\n", quiet ? "true" : "false");
     if (!ret) {
-        printf("error!\n");
+        printf("something went wrong! oh no!\n");
+        return 1;
     }
 }
