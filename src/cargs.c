@@ -27,7 +27,7 @@ static inline bool is_long_arg(carg_string msg) {
 }
 
 static inline bool is_short_arg(carg_string msg) {
-    return msg.len > 1 && msg.str[0] == '-' && isalpha(msg.str[1]);
+    return msg.len == 2 && msg.str[0] == '-' && isalpha(msg.str[1]);
 }
 
 static carg_context _ctx;
